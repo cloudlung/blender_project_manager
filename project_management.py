@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Ballz",
     "author": "Ballzstien",
-    "version": (1, 1),
+    "version": (1, 2),
     "blender": (3, 65, 0),
     "location": "View3D > Tool Shelf",
     "description": "Project Manager",
@@ -179,7 +179,7 @@ class SaveAssetOrShotOperator(bpy.types.Operator):
     
     def execute(self, context):
         print("Inside execute of SaveAssetOrShotOperator")                                          # Debugging line
-        base_path = os.path.join(context.scene.my_root_path, context.scene.my_project_name, "01_Data", "01_Blender")
+        base_path = os.path.join(context.scene.my_root_path, context.scene.project_list, "01_Data", "01_Blender")
         asset_or_shot = context.scene.asset_or_shot
         dir_name = context.scene.dir_name if context.scene.dir_name else context.scene.asset_or_shot_name
         full_path = os.path.join(base_path, asset_or_shot, dir_name)
@@ -249,6 +249,7 @@ class ProjectManagementPanel(bpy.types.Panel):
 # Save Button
         col.separator()
         col.label(text="Save Functions:")
+        col.prop(context.scene, "project_list", text="Choose Project")  # <-- Add this line
         col.prop(context.scene, "asset_or_shot")
         col.prop(context.scene, "asset_or_shot_name")
         col.prop(context.scene, "dir_name")
