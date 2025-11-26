@@ -256,7 +256,7 @@ def register_props():
     )
     bpy.types.Scene.my_root_path = bpy.props.StringProperty(
         name="Root Path",
-        default="P:/01_Projects/",  # <-- fixed (no raw-string-with-trailing-backslash)
+         default="/media/cloud/Projects1/01_Projects/",  # <-- fixed (no raw-string-with-trailing-backslash) CHANGE LOCATION HERE  <----<-----<-----
         subtype='DIR_PATH',
         update=refresh_project_list,
     )
@@ -315,3 +315,4 @@ def unregister():
     del bpy.types.Scene.my_project_name
     del bpy.types.Scene.my_root_path
     del bpy.types.Scene.asset_or_
+
