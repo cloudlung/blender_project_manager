@@ -123,8 +123,11 @@ def create_project_folder(project_name, root_path):
         "01_Data/01_Blender/",
         "01_Data/03_AfterEffects/Source",
         "01_Data/04_DavinciResolve/Source",
+        "01_Data/06_SubstancePainter/Source",
         "02_Exports/Drafts",
         "02_Exports/Final",
+        "02_Exports/Playblasts"
+        "02_Exports/Previews"
         "03_Scripts",
         "04_Client",
     ]
@@ -315,4 +318,5 @@ def unregister():
     del bpy.types.Scene.my_project_name
     del bpy.types.Scene.my_root_path
     del bpy.types.Scene.asset_or_
+
 
